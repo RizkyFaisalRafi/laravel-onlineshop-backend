@@ -68,7 +68,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
-                                            <th>roles</th>
+                                            <th>Roles</th>
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
@@ -82,7 +82,8 @@
                                                 </td>
                                                 <td>
                                                     {{ $user->phone }}
-                                                </td>                                                <td>
+                                                </td>
+                                                <td>
                                                     {{ $user->roles }}
                                                 </td>
                                                 <td>{{ $user->created_at }}</td>
