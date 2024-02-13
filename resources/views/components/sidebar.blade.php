@@ -21,7 +21,6 @@
                 </ul>
             </li>
 
-            <li class="menu-header">Users</li>
             <li class="nav-item dropdown">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Users</span></a>
@@ -29,6 +28,18 @@
                     <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
                         <a class="nav-link"
                             href="{{route('user.index')}}">All Users</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Category</span></a>
+                <ul class="dropdown-menu">
+                    <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
+                        <a class="nav-link"
+                            href="{{route('category.index')}}">All Category</a>
                     </li>
 
                 </ul>
