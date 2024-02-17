@@ -25,19 +25,20 @@
             </div>
 
             <div class="section-body">
-                <h2 class="section-title">Users</h2>
+                <h2 class="section-title">Categories</h2>
 
 
 
                 <div class="card">
-                    <form action="{{ route('user.store') }}" method="POST">
+                    <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="card-header">
                             <h4>Input Text</h4>
                         </div>
                         <div class="card-body">
+                            {{-- Name Catagory --}}
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Name Category</label>
                                 <input type="text"
                                     class="form-control @error('name')
                                 is-invalid
@@ -49,7 +50,9 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+
+                            {{-- Email --}}
+                            {{-- <div class="form-group">
                                 <label>Email</label>
                                 <input type="email"
                                     class="form-control @error('email')
@@ -61,8 +64,10 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+
+                            {{-- Password --}}
+                            {{-- <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -81,12 +86,16 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+
+                            {{-- Phone --}}
+                            {{-- <div class="form-group">
                                 <label>Phone</label>
                                 <input type="number" class="form-control" name="phone">
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+
+                            {{-- Roles --}}
+                            {{-- <div class="form-group">
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
@@ -101,11 +110,13 @@
                                     <label class="selectgroup-item">
                                         <input type="radio" name="roles" value="USER" class="selectgroup-input">
                                         <span class="selectgroup-button">User</span>
-                                    </label>
+                                    </label> --}}
 
                                 </div>
                             </div>
+
                         </div>
+
                         <div class="card-footer text-right">
                             <button class="btn btn-primary">Submit</button>
                         </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class CategoryController extends Controller
 {
@@ -21,15 +23,18 @@ class CategoryController extends Controller
         return view('pages.category.index', compact('categories'));
     }
 
-    // // create
-    // function create() {
-    //     return  view('pages.dashboard');
-    // }
+    // create
+    function create() {
+        return  view('pages.category.create');
+    }
 
-    // // store
-    // function  store(Request $request) {
-    //     return  view('pages.dashboard');
-    // }
+    // store
+    function  store(Request $request) {
+        $data = $request->all();
+        // $data['password'] = Hash::make($request->input('password'));
+        Category::create($data);
+        return redirect()->route('category.index');
+    }
 
     // // show
     // function show($id){
