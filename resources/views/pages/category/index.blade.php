@@ -11,7 +11,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Users</h1>
+                <h1>Categories</h1>
                 <div class="section-header-button">
                     <a href="{{ route('category.create') }}" class="btn btn-primary">Add New</a>
                 </div>
@@ -27,17 +27,21 @@
                         @include('layouts.alert')
                     </div>
                 </div> --}}
-
+                <h2 class="section-title">Categories</h2>
+                <p class="section-lead">
+                    You can manage all Categories, such as editing, deleting and more.
+                </p>
 
 
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
-
+                            <div class="card-header">
+                                <h4>All Categories</h4>
+                            </div>
                             <div class="card-body">
-
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('user.index') }}">
+                                    <form method="GET" action="{{ route('category.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
@@ -53,7 +57,7 @@
                                     <table class="table-striped table">
                                         <tr>
 
-                                            <th>Name</th>
+                                            <th>Name Category</th>
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
