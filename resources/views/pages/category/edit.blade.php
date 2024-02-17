@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit User')
+@section('title', 'Edit Category')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -30,7 +30,7 @@
 
 
                 <div class="card">
-                    <form action="{{ route('user.update', $user) }}" method="POST">
+                    <form action="{{ route('category.update', $user) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card-header">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Name Category</label>
                                 <input type="text"
                                     class="form-control @error('name')
                                 is-invalid
@@ -50,7 +50,8 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+
+                            {{-- <div class="form-group">
                                 <label>Email</label>
                                 <input type="email"
                                     class="form-control @error('email')
@@ -63,6 +64,7 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label>Password</label>
                                 <div class="input-group">
@@ -83,10 +85,12 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input type="number" class="form-control" name="phone" value="{{ $user->phone }}">
                             </div>
+
                             <div class="form-group">
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">
@@ -107,7 +111,8 @@
                                     </label>
 
                                 </div>
-                            </div>
+                            </div> --}}
+
                         </div>
                         <div class="card-footer text-right">
                             <button class="btn btn-primary">Submit</button>
