@@ -23,3 +23,6 @@ Route::post("/register", [App\Http\Controllers\Api\AuthController::class, 'regis
 
 // Logout
 Route::post("/logout", [App\Http\Controllers\Api\AuthController::class, 'logout'])->middleware("auth:sanctum");
+
+// Login
+Route::post("/login", [App\Http\Controllers\Api\AuthController::class, 'login'])->name("login");
