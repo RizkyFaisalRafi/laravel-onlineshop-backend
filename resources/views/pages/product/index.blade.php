@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="section-body">
-                {{-- <div class="row">
+                <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
                     </div>
-                </div> --}}
+                </div>
                 <h2 class="section-title">Product</h2>
                 <p class="section-lead">
                     You can manage all Product, such as editing, deleting and more.
@@ -37,11 +37,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Categories</h4>
+                                <h4>All Product</h4>
                             </div>
                             <div class="card-body">
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('category.index') }}">
+                                    <form method="GET" action="{{ route('product.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">

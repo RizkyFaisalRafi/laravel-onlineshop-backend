@@ -44,17 +44,30 @@ class ProductController extends Controller
 
     // edit
     public function edit($id) {
-        return  view('pages.dashboard');
+        $product = Product::findOrFail($id);
+        $categories = \App\Models\Category::all();
+        return  view('pages.product.edit', compact('product', 'categories'));
     }
 
     // update
     public function update(Request $request, $id) {
-        return  view('pages.dashboard');
+        $product = Product::findOrFail($id);
+        // If image is not empty, then update the image
+        if ($request->image != ''){
+            $filename = time().'.'.$request->image->extension();
+            $request->image->storeAs('public/products',$filename);
+            $product->image = $filename;
+        }
+        $product->update($request->all());
+        return redirect()->route( 'product.index' ) -> with('success','Product updated successfully!');
     }
 
     // destroy
     public function destroy($id) {
-        return  view('pages.dashboard');
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->route( 'product.index' ) -> with('success','Product deleted successfully!');
     }
 
 
