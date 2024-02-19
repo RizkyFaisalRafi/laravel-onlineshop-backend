@@ -30,42 +30,33 @@ class CategoryController extends Controller
 
     // store
     function  store(Request $request) {
-        $data = $request->all();
-        // $data['password'] = Hash::make($request->input('password'));
-        Category::create($data);
-        return redirect()->route('category.index');
-    }
+        $validated = $request->validate([
+            'name' => 'required|max:100',
+        ]);
+        $category = \App\Models\Category::create($validated);
 
-    // // show
-    // function show($id){
-    //     return  view('pages.dashboard');
-    // }
+        return redirect()->route('category.index') -> with('success','Category created successfully!');
+    }
 
     // edit
     function edit($id) {
-        $user = Category::findOrFail($id);
-        return view('pages.category.edit', compact('user'));
+        $category = Category::findOrFail($id);
+        return view('pages.category.edit', compact('category'));
     }
 
     // update
     function update(Request $request, $id) {
         $data = $request->all();
-        $user = Category::findOrFail($id);
-        //check if password is not empty
-        // if ($request->input('password')) {
-        //     $data['password'] = Hash::make($request->input('password'));
-        // } else {
-        //     //if password is empty, then use the old password
-        //     $data['password'] = $user->password;
-        // }
-        $user->update($data);
-        return redirect()->route('category.index');
+        $category = Category::findOrFail($id);
+
+        $category->update($data);
+        return redirect()->route('category.index') -> with( 'success', 'Category updated successfully!' );
     }
 
     // destroy
     function destroy($id) {
-        $user = Category::findOrFail($id);
-        $user->delete();
-        return redirect()->route('category.index');
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('category.index') -> with( 'success', 'Category deleted successfully!' );
     }
 }

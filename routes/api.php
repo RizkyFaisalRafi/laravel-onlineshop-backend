@@ -25,7 +25,7 @@ Route::post("/register", [App\Http\Controllers\Api\AuthController::class, 'regis
 Route::post("/logout", [App\Http\Controllers\Api\AuthController::class, 'logout'])->middleware("auth:sanctum");
 
 // Login
-Route::post("/login", [App\Http\Controllers\Api\AuthController::class, 'login'])->name("login");
+Route::post("/login", [App\Http\Controllers\Api\AuthController::class, 'login']);
 
 // Category
 Route::get("/categories", [App\Http\Controllers\Api\CategoryController::class, "index"]);
